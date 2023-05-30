@@ -55,7 +55,7 @@ export const createSdkToken = async (
       referrer,
     });
     if (sdkToken) {
-      return res.status(200).json(sdkToken);
+      return res.status(200).json({ sdkToken });
     }
     return res.status(400).json({ message: "Unable to create a token" });
   } catch (e) {

@@ -22,7 +22,7 @@ router
   .route("/create")
   .post(validator.body(applicationSchema), createApplication);
 
-router.route("/sdk_token").post(validator.body(tokenSchema), createSdkToken);
+router.route("/sdk_token").get(validator.query(tokenSchema), createSdkToken);
 
 router.route("/extract").get(validator.body(extractionSchema), exTractData);
 

@@ -50,7 +50,7 @@ const createSdkToken = (req, res) => __awaiter(void 0, void 0, void 0, function*
             referrer,
         });
         if (sdkToken) {
-            return res.status(200).json(sdkToken);
+            return res.status(200).json({ sdkToken });
         }
         return res.status(400).json({ message: "Unable to create a token" });
     }

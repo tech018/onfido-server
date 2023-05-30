@@ -13,7 +13,7 @@ const application_2 = require("../../shema/application");
 router
     .route("/create")
     .post(validator.body(application_1.applicationSchema), applications_1.createApplication);
-router.route("/sdk_token").post(validator.body(application_2.tokenSchema), applications_1.createSdkToken);
+router.route("/sdk_token").get(validator.query(application_2.tokenSchema), applications_1.createSdkToken);
 router.route("/extract").get(validator.body(application_1.extractionSchema), applications_1.exTractData);
 router.route("/check").post(validator.body(application_1.performCheckSchema), applications_1.performCheck);
 router
